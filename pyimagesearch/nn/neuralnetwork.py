@@ -4,7 +4,7 @@ import numpy as np
 class NeuralNetwork:
     def __init__(self, layers, alpha=0.1):
         # initialise the list of weight matrices, then store the network architecture
-        # and learning rate
+        # and learning rate [NOTE: W is a LIST of numpy ARRAYS or MATRICES]
         self.W = []
         self.alpha = alpha
         self.layers = layers
@@ -19,6 +19,7 @@ class NeuralNetwork:
             w = np.random.randn(layers[i]+1,layers[i+1]+1)
             self.W.append(w/np.sqrt(layers[i]))
 
+        # NOTE: len(W) will be one less than len(layers)
         # the last two layers are special case where the input
         # connection need a bias term but but the output does not
         w = np.random.randn(layers[-2]+1, layers[-1])
