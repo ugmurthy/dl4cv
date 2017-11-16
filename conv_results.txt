@@ -1,0 +1,23 @@
+CONV01
+lr=0.005
+             precision    recall  f1-score   support
+
+        cat       0.66      0.44      0.52       262
+        dog       0.52      0.75      0.61       249
+      panda       0.88      0.79      0.83       239
+
+avg / total       0.68      0.65      0.65       750
+
+
+CONV02
+lr=0.05
+             precision    recall  f1-score   support
+
+        cat       0.58      0.60      0.59       262
+        dog       0.54      0.51      0.53       249
+      panda       0.79      0.79      0.79       239
+
+avg / total       0.63      0.63      0.63       750
+
+
+
