@@ -52,6 +52,8 @@ predictions = model.predict(testX,batch_size=32)
 print(classification_report(testY.argmax(axis=1), predictions.argmax(axis=1),
     target_names=["cat","dog","panda"]))
 
+json_str = model.to_json()
+print("Model Architecture\n{}".format(json_str))
 
 plt.style.use("ggplot")
 plt.figure()
