@@ -38,7 +38,7 @@ model = Sequential()
 model.add(Dense(256,input_shape=(784,), activation="sigmoid"))
 model.add(Dense(128, activation="sigmoid"))
 model.add(Dense(10, activation="softmax"))
-
+model.summary()
 # train the model using SGD
 print("[INFO] training network...")
 sgd=SGD(0.01)

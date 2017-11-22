@@ -34,7 +34,7 @@ opt = SGD(lr=0.01)
 model = LeNet.build(width=28, height=28, depth=1, classes=10)
 
 model.compile(loss="categorical_crossentropy", optimizer=opt, metrics=["accuracy"])
-
+model.summary()
 #train network
 print("[INFO] training network...")
 H = model.fit(trainX, trainY, validation_data=(testX, testY),
@@ -46,6 +46,7 @@ predictions = model.predict(testX, batch_size=128)
 print(classification_report(testY.argmax(axis=1),
     predictions.argmax(axis=1),
     target_names=[str(x) for x in le.classes_]))
+
 
 plt.style.use("ggplot")
 plt.figure()
