@@ -17,9 +17,12 @@ args = vars(ap.parse_args())
 
 # load the input image, convert it to numpy array, and then reshape it to have an extra dimension
 print("[INFO] loading example image...")
-image = load_img(args["image"])
-image = img_to_array(image)
-image = np.expand_dims(image, axis=0)
+
+
+image = load_img(args["image"])  # a PIL image
+image = img_to_array(image)      # convert to a numpy array
+image = np.expand_dims(image, axis=0) # add one additional dimension at index 0
+
 
 # construct the image generator for data augmentation then
 # initialise the total number of images generated thus far
@@ -29,6 +32,7 @@ aug = ImageDataGenerator(rotation_range=30, width_shift_range=0.1,
 total = 0
 
 # construct the actual python generator
+# aug.flow will return (x) x.shape=(1,h,w,3)
 print("[INFO] generating images...")
 imageGen = aug.flow(image, batch_size=1, save_to_dir=args["output"],
     save_prefix=args["prefix"], save_format="jpg")
