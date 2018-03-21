@@ -1,0 +1,150 @@
+
+(dl4cv) murthy@murthy-MS-7976:~/dl4cv$ python train_model.py --db d_animals/hdf5/features.hdf5 --model animals.pickle
+[INFO] best hyperparameters: {'C': 0.1}
+[INFO] evaluating...
+             precision    recall  f1-score   support
+
+       cats       0.96      1.00      0.98       236
+       dogs       1.00      0.96      0.98       252
+      panda       1.00      0.99      0.99       262
+
+avg / total       0.98      0.98      0.98       750
+
+[INFO] saving model
+(dl4cv) murthy@murthy-MS-7976:~/dl4cv$ python train_model.py --db d_caltech/hdf5/features.hdf5 --model caltech101.pickle
+[INFO] best hyperparameters: {'C': 0.1}
+[INFO] evaluating...
+                 precision    recall  f1-score   support
+
+          Faces       0.98      0.98      0.98       105
+     Faces_easy       0.97      0.98      0.98       103
+       Leopards       0.98      1.00      0.99        56
+     Motorbikes       1.00      1.00      1.00       190
+      accordion       1.00      1.00      1.00        17
+      airplanes       1.00      1.00      1.00       182
+         anchor       0.92      0.92      0.92        13
+            ant       0.93      0.93      0.93        15
+         barrel       1.00      1.00      1.00        12
+           bass       0.89      0.89      0.89        18
+         beaver       1.00      0.64      0.78        14
+      binocular       1.00      0.89      0.94         9
+         bonsai       0.90      1.00      0.95        35
+          brain       1.00      0.91      0.95        22
+   brontosaurus       0.82      0.90      0.86        10
+         buddha       0.95      1.00      0.98        21
+      butterfly       0.93      0.96      0.94        26
+         camera       1.00      1.00      1.00        14
+         cannon       1.00      0.50      0.67         8
+       car_side       1.00      1.00      1.00        39
+    ceiling_fan       0.88      0.88      0.88         8
+      cellphone       0.94      1.00      0.97        17
+          chair       0.84      0.94      0.89        17
+     chandelier       1.00      1.00      1.00        29
+    cougar_body       1.00      0.77      0.87        13
+    cougar_face       0.94      1.00      0.97        17
+           crab       0.93      1.00      0.96        13
+       crayfish       0.82      0.88      0.85        16
+      crocodile       0.69      0.75      0.72        12
+ crocodile_head       0.93      0.93      0.93        15
+            cup       0.95      0.90      0.93        21
+      dalmatian       0.95      1.00      0.97        18
+    dollar_bill       1.00      1.00      1.00        15
+        dolphin       1.00      0.84      0.91        19
+      dragonfly       0.90      0.95      0.92        19
+electric_guitar       0.88      1.00      0.94        15
+       elephant       0.90      0.86      0.88        22
+            emu       0.93      0.81      0.87        16
+      euphonium       1.00      1.00      1.00        17
+           ewer       1.00      0.96      0.98        23
+          ferry       1.00      1.00      1.00        18
+       flamingo       1.00      0.81      0.90        16
+  flamingo_head       1.00      1.00      1.00        13
+       garfield       1.00      1.00      1.00         5
+        gerenuk       1.00      1.00      1.00         3
+     gramophone       1.00      0.92      0.96        13
+    grand_piano       1.00      1.00      1.00        22
+      hawksbill       0.97      1.00      0.98        28
+      headphone       1.00      0.82      0.90        11
+       hedgehog       0.88      1.00      0.94        15
+     helicopter       0.95      1.00      0.97        19
+           ibis       0.85      1.00      0.92        22
+   inline_skate       1.00      0.80      0.89         5
+    joshua_tree       0.92      1.00      0.96        12
+       kangaroo       0.92      0.96      0.94        23
+          ketch       0.75      0.92      0.83        26
+           lamp       0.91      1.00      0.95        10
+         laptop       1.00      1.00      1.00        11
+          llama       0.77      0.77      0.77        13
+        lobster       1.00      0.73      0.84        11
+          lotus       0.60      0.83      0.70        18
+       mandolin       1.00      1.00      1.00         9
+         mayfly       0.90      0.90      0.90        10
+        menorah       0.96      0.96      0.96        25
+      metronome       0.83      0.83      0.83         6
+        minaret       1.00      1.00      1.00        16
+       nautilus       1.00      1.00      1.00        14
+        octopus       0.88      0.78      0.82         9
+          okapi       1.00      0.88      0.93         8
+         pagoda       1.00      1.00      1.00        10
+          panda       1.00      0.70      0.82        10
+         pigeon       1.00      1.00      1.00        16
+          pizza       1.00      1.00      1.00        11
+       platypus       1.00      1.00      1.00         4
+        pyramid       1.00      1.00      1.00        16
+       revolver       0.96      1.00      0.98        24
+          rhino       0.80      1.00      0.89        12
+        rooster       0.92      1.00      0.96        11
+      saxophone       1.00      1.00      1.00         9
+       schooner       0.87      0.68      0.76        19
+       scissors       1.00      1.00      1.00         9
+       scorpion       0.96      0.92      0.94        25
+      sea_horse       0.94      1.00      0.97        17
+         snoopy       0.73      0.80      0.76        10
+    soccer_ball       1.00      1.00      1.00        17
+        stapler       1.00      1.00      1.00        12
+       starfish       1.00      0.96      0.98        24
+    stegosaurus       1.00      1.00      1.00        16
+      stop_sign       0.94      1.00      0.97        15
+     strawberry       1.00      1.00      1.00         9
+      sunflower       0.87      0.93      0.90        14
+           tick       0.92      1.00      0.96        11
+      trilobite       1.00      1.00      1.00        23
+       umbrella       1.00      1.00      1.00        22
+          watch       1.00      0.97      0.98        63
+    water_lilly       0.75      0.27      0.40        11
+     wheelchair       1.00      1.00      1.00        17
+       wild_cat       1.00      1.00      1.00         8
+  windsor_chair       1.00      0.93      0.97        15
+         wrench       0.92      0.92      0.92        12
+       yin_yang       1.00      1.00      1.00        16
+
+    avg / total       0.96      0.95      0.95      2170
+
+[INFO] saving model
+(dl4cv) murthy@murthy-MS-7976:~/dl4cv$ python train_model.py --db d_flowers/hdf5/features.hdf5 --model flowers17.pickle
+[INFO] best hyperparameters: {'C': 0.1}
+[INFO] evaluating...
+             precision    recall  f1-score   support
+
+   bluebell       0.81      1.00      0.90        13
+  buttercup       0.89      1.00      0.94        16
+  coltsfoot       1.00      1.00      1.00        18
+    cowslip       0.86      1.00      0.92        18
+     crocus       0.95      0.83      0.88        23
+   daffodil       1.00      0.88      0.94        17
+      daisy       0.95      0.95      0.95        19
+  dandelion       0.96      0.96      0.96        25
+ fritillary       1.00      0.91      0.95        22
+       iris       1.00      0.95      0.97        20
+ lilyvalley       0.91      0.95      0.93        22
+      pansy       1.00      0.94      0.97        18
+   snowdrop       0.75      0.83      0.79        18
+  sunflower       1.00      0.96      0.98        24
+  tigerlily       0.96      1.00      0.98        22
+      tulip       0.95      0.83      0.89        24
+ windflower       0.86      0.90      0.88        21
+
+avg / total       0.94      0.93      0.93       340
+
+[INFO] saving model
+

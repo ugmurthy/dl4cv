@@ -26,7 +26,8 @@ class  Igrid:
         self.rows = rows
         self.cols = cols
         self.size = size
-        self.fig = plt.figure(figsize=(self.size, self.size), dpi=100)
+        self.fig = plt.figure(figsize=(self.size, self.size))
+        #self.fig = plt.figure(figsize=(self.size, self.size), dpi=100)
         self.grid = gridspec.GridSpec(self.rows,self.cols, wspace=0.0, hspace=0.0,
                 left=None,right=None, top=None, bottom=None)
         self.cmap = cmap

@@ -21,10 +21,10 @@ args = vars(ap.parse_args())
 
 # grab the list of images and then extract the class labels
 # from image paths
-imagePaths = list(paths.list_images(args["dataset"]))
-print("[INFO]... image paths{}".format(paths))
-classNames = [pt.split(os.path.sep)[-2] for pt in imagePaths]
-classNames = [str(x) for x in np.unique(classNames)]
+imagePaths = list(paths.list_images(args["dataset"])) # get all pathnames of files in an array
+
+classNames = [pt.split(os.path.sep)[-2] for pt in imagePaths] # [-2] is sub-dir under images - our classname
+classNames = [str(x) for x in np.unique(classNames)] # create an list of unique classnames
 
 # initialise image preprocessors
 aap = AspectAwarePreprocessor(64,64)
@@ -32,8 +32,8 @@ iap = ImageToArrayPreprocessor()
 
 # load the dataset from disk then scale the raw pixel intensities
 # to the range[0,1]
-sdl = SimpleDatasetLoader(preprocessors=[aap,iap])
-(data,labels) = sdl.load(imagePaths,verbose=500)
+sdl = SimpleDatasetLoader(preprocessors=[aap,iap]) # create loader
+(data,labels) = sdl.load(imagePaths,verbose=500)   # loads images into memory
 data=data.astype("float")/255.0
 
 
@@ -42,7 +42,7 @@ data=data.astype("float")/255.0
     test_size=0.25, random_state=42)
 
 # convert the integers to lables
-trainY = LabelBinarizer().fit_transform(trainY)
+trainY = LabelBinarizer().fit_transform(trainY) #- create one-hot vectors for classnames
 testY= LabelBinarizer().fit_transform(testY)
 
 
@@ -61,6 +61,7 @@ model.compile(loss="categorical_crossentropy", optimizer=opt,
 
 # train the network
 print("[INFO] training network...")
+# aug.flow - return (x,y)  x.shape = (32,64,64,3) y.shape = (32,17)
 H = model.fit_generator(aug.flow(trainX,trainY,batch_size=32),
     validation_data = (testX,testY),
     steps_per_epoch=len(trainX)//32,
