@@ -22,3 +22,8 @@ dist
 out
 imgs
 *.jpg
+datasets
+d_*
+*.cpickle
+*.hdf5
+*.json
